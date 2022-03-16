@@ -4,6 +4,10 @@
 [![Dokku](https://img.shields.io/badge/Dokku-Repo-blue.svg)](https://github.com/dokku/dokku)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/D1ceWard/plausible_on_dokku/graphs/commit-activity)
 
+# Managed Postgres
+
+We removed `&& /entrypoint.sh db createdb` from the Dockerfile to make plausible work with external databases, see: https://plausible.io/docs/self-hosting
+
 # Run Plausible on Dokku
 
 ## Perquisites
@@ -20,10 +24,10 @@ powered mini-Heroku_.
 
 ### Requirements
 
-* A working [Dokku host](http://dokku.viewdocs.io/dokku/getting-started/installation/)
-* [PostgreSQL](https://github.com/dokku/dokku-postgres) plugin for Dokku
-* [Clickhouse](https://github.com/dokku/dokku-clickhouse) plugin for Dokku
-* [Letsencrypt](https://github.com/dokku/dokku-letsencrypt) plugin for SSL (optionnal)
+- A working [Dokku host](http://dokku.viewdocs.io/dokku/getting-started/installation/)
+- [PostgreSQL](https://github.com/dokku/dokku-postgres) plugin for Dokku
+- [Clickhouse](https://github.com/dokku/dokku-clickhouse) plugin for Dokku
+- [Letsencrypt](https://github.com/dokku/dokku-letsencrypt) plugin for SSL (optionnal)
 
 # Setup
 
@@ -72,6 +76,7 @@ dokku config plausible
 ```
 
 Transform CLICKHOUSE_URL to http format like (as example) :
+
 - `clickhouse://plausible:password@dokku-clickhouse-plausible:9000/plausible`
 
 Become (scheme and port change):
@@ -183,6 +188,7 @@ dokku letsencrypt plausible
 Your Plausible instance should now be available on [https://plausible.example.com](https://plausible.example.com).
 
 ## Bonus: rename script file
+
 By default, Plausible will use a file called `/js/plausible.js` which is blocked by most adblockers (Adblock business lets you pay to display your ads, but privacy-focused analytics are blocked by default. Yay).
 
 Since Plausible respects user privacy, it seems fair to collect anonymous traffic data. You can add a nginx config file: `vi /home/dokku/plausible/nginx.conf.d/rewrite.conf`:
