@@ -2,12 +2,6 @@ ARG PLAUSIBLE_VERSION="v2.0.0"
 
 FROM plausible/analytics:$PLAUSIBLE_VERSION
 
-USER root
-
-RUN apk add --no-cache clickhouse-client
-
-user plausibleuser
-
 EXPOSE 5000/tcp
 
 CMD \
