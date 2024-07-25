@@ -8,6 +8,7 @@ ADD postgres.crt /app/postgres.crt
 USER root
 
 RUN apk add --no-cache python3 py3-pip
+RUN apk add --no-cache gcc musl-dev python3-dev libffi-dev
 RUN pip install clickhouse-connect
 
 USER plausible
