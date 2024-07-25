@@ -6,6 +6,8 @@ USER root
 
 RUN apk add --no-cache clickhouse-client
 
+user plausibleuser
+
 EXPOSE 5000/tcp
 
 CMD \
