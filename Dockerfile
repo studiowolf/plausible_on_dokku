@@ -2,6 +2,12 @@ ARG PLAUSIBLE_VERSION="v2.1.1"
 
 FROM plausible/community-edition:$PLAUSIBLE_VERSION
 
+USER root
+
+RUN apk add --no-cache clickhouse-client
+
+user plausible
+
 ADD postgres.crt /app/postgres.crt
 
 EXPOSE 5000/tcp
