@@ -1,6 +1,6 @@
 ARG PLAUSIBLE_VERSION="v2.1.0"
 
-FROM plausible/analytics:$PLAUSIBLE_VERSION
+FROM plausible/community-edition:$PLAUSIBLE_VERSION
 
 EXPOSE 5000/tcp
 
