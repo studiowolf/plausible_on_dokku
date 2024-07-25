@@ -5,7 +5,6 @@ FROM plausible/community-edition:$PLAUSIBLE_VERSION
 USER root
 COPY postgres.crt /usr/local/share/ca-certificates/postgres.crt
 RUN update-ca-certificates
-USER plausible
 
 EXPOSE 5000/tcp
 
