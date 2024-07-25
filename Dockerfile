@@ -2,9 +2,7 @@ ARG PLAUSIBLE_VERSION="v2.1.0"
 
 FROM plausible/community-edition:$PLAUSIBLE_VERSION
 
-USER root
-COPY postgres.crt /usr/local/share/ca-certificates/postgres.crt
-RUN update-ca-certificates
+ADD postgres.crt /app/postgres.crt
 
 EXPOSE 5000/tcp
 
