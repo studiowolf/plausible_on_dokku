@@ -2,13 +2,15 @@ ARG PLAUSIBLE_VERSION="v2.1.1"
 
 FROM plausible/community-edition:$PLAUSIBLE_VERSION
 
+ADD postgres.crt /app/postgres.crt
+
+# Add python for backup script
 USER root
 
-RUN apk add --no-cache clickhouse-client
+RUN apk add --no-cache python3 py3-pip
+RUN pip install clickhouse-connect
 
-user plausible
-
-ADD postgres.crt /app/postgres.crt
+USER plausible
 
 EXPOSE 5000/tcp
 
