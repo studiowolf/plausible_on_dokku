@@ -2,9 +2,7 @@ ARG PLAUSIBLE_VERSION="v2.0.0"
 
 FROM plausible/analytics:$PLAUSIBLE_VERSION
 
-RUN apk update && \
-    apk upgrade && \
-    apk add clickhouse-client
+RUN apk add --no-cache clickhouse-client
 
 EXPOSE 5000/tcp
 
