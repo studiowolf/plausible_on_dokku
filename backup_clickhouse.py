@@ -3,7 +3,7 @@ from datetime import datetime
 from clickhouse_driver import Client
 
 # Replace these with your actual connection details
-connection_string = os.getenv('CLICKHOUSE_DATABASE_URL')
+connection_string = os.getenv('CLICKHOUSE_URL')
 s3_access_key_id = os.getenv('B2_ACCESS_KEY_ID')
 s3_secret_access_key = os.getenv('B2_SECRET_ACCESS_KEY')
 
