@@ -1,8 +1,8 @@
 {
   "cron": [
     {
-      "command": "npm run send-email",
-      "schedule": "@daily"
+      "command": "python backup_clickhouse.py",
+      "schedule": "0 3 */3 * *"
     }
   ]
 }
