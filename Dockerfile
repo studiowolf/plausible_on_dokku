@@ -10,7 +10,7 @@ USER root
 
 # Install Python and necessary dependencies
 RUN apk add --no-cache python3 py3-pip gcc musl-dev python3-dev libffi-dev \
-    && pip install clickhouse-connect
+    && pip install clickhouse-driver[lz4]
 
 USER plausible
 
