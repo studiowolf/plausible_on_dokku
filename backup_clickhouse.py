@@ -16,8 +16,6 @@ client = Client.from_url(connection_string)
 # Generate a timestamp
 timestamp = datetime.now().strftime('%Y-%m-%d-%H:%M')
 
-print(timestamp)
-
 # Define the BACKUP query with environment variable credentials
 backup_query = f"""
 BACKUP DATABASE plausible_events_db TO S3(
