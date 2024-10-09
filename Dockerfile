@@ -8,7 +8,7 @@ COPY postgres.crt backup_clickhouse.py /app/
 # Add python for backup script
 USER root
 
-# Install Python and necessary dependencies
+# Install Python and necessary dependencies so we can run a backup cron
 RUN apk add --no-cache python3 py3-pip gcc musl-dev python3-dev libffi-dev \
     && pip install clickhouse-driver --break-system-packages
 
