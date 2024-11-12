@@ -18,7 +18,7 @@ timestamp = datetime.now().strftime('%Y-%m-%d-%H:%M')
 
 # Define the BACKUP query with environment variable credentials
 backup_query = f"""
-BACKUP DATABASE plausible_events_db TO S3(
+BACKUP DATABASE plausible TO S3(
     'https://s3.eu-central-003.backblazeb2.com/wolfmaps-clickhouse-backup/{timestamp}/',
     '{s3_access_key_id}',
     '{s3_secret_access_key}'
