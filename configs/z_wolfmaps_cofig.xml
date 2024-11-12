@@ -1,0 +1,32 @@
+<!-- Changes made to ClickHouse config for Wolf Maps -->
+<!-- To be placed in /var/lib/dokku/services/clickhouse/plausible/config/config.d-->
+<!-- Filename starts with z_ so these configs are applied last -->
+
+<clickhouse>
+    <!-- Disable logging to save disk space -->
+    <logger>
+        <level>warning</level>
+        <console>true</console>
+    </logger>
+    <asynchronous_metric_log remove="1"/>
+    <backup_log remove="1"/>
+    <error_log remove="1"/>
+    <metric_log remove="1"/>
+    <query_thread_log remove="1" />
+    <query_log remove="1" />
+    <query_views_log remove="1" />
+    <part_log remove="1"/>
+    <session_log remove="1"/>
+    <text_log remove="1" />
+    <trace_log remove="1"/>
+    <crash_log remove="1"/>
+    <opentelemetry_span_log remove="1"/>
+    <zookeeper_log remove="1"/>
+    <processors_profile_log remove="1"/>
+    <profiles>
+        <default>
+            <log_queries>0</log_queries> <!-- normally it's better to keep it turned on! -->
+            <log_query_threads>0</log_query_threads>
+        </default>
+    </profiles>
+</clickhouse>

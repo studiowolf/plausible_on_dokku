@@ -13,9 +13,17 @@ For now we run a FULL clickhouse backup once every three days at 3 am. Clickhous
 
 ## Run the backup script by hand
 
-$ dokku cron:run gjuhm85p4ef0qnmdi9cugny5n1g1chncalhuukhu0bqp93lbb780geh4ch9zhjgt8ocnxwf7z8hkzvxaui
+> dokku cron:run gjuhm85p4ef0qnmdi9cugny5n1g1chncalhuukhu0bqp93lbb780geh4ch9zhjgt8ocnxwf7z8hkzvxaui
 
 ## Misc
 
 - Enter container: dokku enter web /bin/sh
 - Check logs when application won't start: dokku logs
+
+## Clickhouse configuration
+
+See the config files in the config directory. The files show instructions where to put the files.
+
+## Restore database from backup
+
+Use the example restore query from docs/clickhouse_queries.sql
